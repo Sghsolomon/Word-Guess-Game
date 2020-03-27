@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+p{
+    font-weight: 300;
+    display: inline;
+    padding: 5px;
+}
+
+section {
+    padding: 10px;
+}
