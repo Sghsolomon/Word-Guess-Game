@@ -89,10 +89,18 @@ function cGuess(){
        video(wordGuess.join(''))
        eselectedWord()
        ewordGuess()
+       userclick = 0;
+       document.getElementById('guess').innerHTML  = '';
        cGuess()
        document.getElementById('cchoice').innerHTML = selectedWord;
-
-       
+      } 
+      if(userclick > 6 &&  wordGuess.join('') !== selectedWord){
+         alert('YOU LOSE, PLEASE TRY AGAIN')
+         eselectedWord()
+       ewordGuess()
+       userclick = 0;
+       document.getElementById('guess').innerHTML  = '';
+       cGuess()
       }
    }
 }
