@@ -7,8 +7,14 @@ var userclick =  0;
 var win =        0;
 var chance = 6;
 
+function eselectedWord(){
+   selectedWord.length = 0;
+}
 
-// select a video from the players list
+function ewordGuess(){
+   wordGuess.length = 0;
+}
+
    const video = function(wordGuess){
         if(wordGuess == 'deluro'){
      var x = document.createElement('img')
@@ -38,7 +44,6 @@ var chance = 6;
         }
 }
 
-// random computer choice from the array
 function cGuess(){
  computerGuess = array[Math.floor(Math.random() * array.length)]          
     console.log(computerGuess);
@@ -47,16 +52,14 @@ function cGuess(){
    
 }
 
-// call back function for the computer choice
  cGuess()
 
-
- // user selection on click
+     function main(){
     document.onkeyup = function(){
        var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
        wordGuess.push(userGuess);
        
-       
+       //console.log(wordGuess)
    userclick++
    chance--
    if(chance < 7 && chance >= 0){
@@ -72,7 +75,7 @@ function cGuess(){
        if(key == userGuess && userclick < 7){
       //selectedWord.splice(selectedWord.indexOf(key), 1, userGuess)
       //console.log(selectedWord)
-          document.getElementById('cchoice').innerHTML = '_ _ _ _ _ _';
+          document.getElementById('cchoice').innerHTML = selectedWord;
           break;
        } 
        
@@ -83,8 +86,85 @@ function cGuess(){
        document.getElementById('win').innerHTML = win;
        document.getElementById('chance').innerHTML = chance;
        video(wordGuess.join(''))
-       cGuess();
-       document.getElementById('guess').innerHTML = ''
+       eselectedWord()
+       ewordGuess()
+       cGuess()
+       document.getElementById('cchoice').innerHTML = selectedWord;
+
+       
       }
    }
+}
    
+main()
+// var empty = [];
+// var uselect = [];
+// var uclick = 0;
+// var array = ['solomon', 'simon']
+// var win = 0;
+// var choice = array[Math.floor(Math.random() * array.length)]
+//     for(let key of choice)
+//      empty.push(key);
+//      console.log(empty)
+//      document.getElementById('cchoice').value = empty;
+//      // document.getElementById('cchoice').style.visibility = 'hidden'
+     
+     
+
+//    document.onkeyup = function(){
+//       var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+//       console.log(userGuess);
+//       uclick++
+//       console.log('user click '+ uclick)
+//       for(let key of empty){
+//       if(userGuess == key){
+//          uselect.push(userGuess)
+//          win++
+//          console.log('win ' + win)
+//          empty.splice(empty.indexOf(key), 1, userGuess);
+//          document.getElementById('cchoice').innerHTML += userGuess;
+//         //document.getElementById('cchoice').innerHTML += empty.splice(empty.indexOf(key), 1, userGuess);
+        
+         
+//          break;
+//       }
+       
+      
+//    }
+//       //empty = document.getElementById('cchoice').innerHTML
+      
+      
+//        console.log(empty)   
+         
+         
+//       }
+      
+          
+      
+         
+
+      
+   
+      
+      
+
+
+
+
+
+   
+       
+    
+   
+   
+
+
+  
+   
+
+   
+
+  
+
+
+ 
