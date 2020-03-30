@@ -4,8 +4,22 @@ var array = ['deluro', 'efriem', 'fihira']
 var selectedWord = [];
 var wordGuess =  [];
 var userclick =  0;   
-var win =        0;
+
+var win =    0;
 var chance = 6;
+
+
+function list(){
+array.map(function(y){
+   x = document.createElement('li')
+       x.append(y) 
+       document.getElementById('list').append(x)
+   })
+   
+}
+  
+
+
 
 function eselectedWord(){
    selectedWord.length = 0;
@@ -14,6 +28,7 @@ function eselectedWord(){
 function ewordGuess(){
    wordGuess.length = 0;
 }
+
 
    const video = function(wordGuess){
         if(wordGuess == 'deluro'){
@@ -58,7 +73,6 @@ function cGuess(){
     document.onkeyup = function(){
        var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
        wordGuess.push(userGuess);
-       
        //console.log(wordGuess)
    userclick++
    chance--
