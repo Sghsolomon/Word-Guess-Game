@@ -75,7 +75,7 @@ function cGuess(){
        if(key == userGuess && userclick < 7){
       //selectedWord.splice(selectedWord.indexOf(key), 1, userGuess)
       //console.log(selectedWord)
-          document.getElementById('cchoice').innerHTML = selectedWord;
+          document.getElementById('cchoice').innerHTML = userGuess + '_' + selectedWord.join('')[selectedWord.join('').length-2] +selectedWord.join('')[selectedWord.join('').length-1];
           break;
        } 
        
@@ -92,7 +92,7 @@ function cGuess(){
        userclick = 0;
        document.getElementById('guess').innerHTML  = '';
        cGuess()
-       document.getElementById('cchoice').innerHTML = selectedWord;
+       document.getElementById('cchoice').innerHTML = '_ '+ selectedWord.join('')[selectedWord.join('').length-2] +  selectedWord.join('')[selectedWord.join('').length-1];
       } 
       if(userclick > 6 &&  wordGuess.join('') !== selectedWord){
          alert('YOU LOSE, PLEASE TRY AGAIN')
@@ -101,6 +101,7 @@ function cGuess(){
        userclick = 0;
        document.getElementById('guess').innerHTML  = '';
        cGuess()
+       document.getElementById('cchoice').innerHTML = '_ '+ selectedWord.join('')[selectedWord.join('').length-2] +  selectedWord.join('')[selectedWord.join('').length-1];
       }
    }
 }

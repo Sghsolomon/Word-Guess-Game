@@ -2,6 +2,20 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url('./image/michael.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+
+}
+
+#content {
+    padding-left: 100px;
+}
+
+
 p{
     
     display: inline;
