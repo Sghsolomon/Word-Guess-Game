@@ -85,6 +85,7 @@ function cGuess(){
        chance = 6;
        document.getElementById('win').innerHTML = win;
        document.getElementById('chance').innerHTML = chance;
+       document.getElementById('wrapper').innerHTML = '';
        video(wordGuess.join(''))
        eselectedWord()
        ewordGuess()
