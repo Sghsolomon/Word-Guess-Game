@@ -9,7 +9,7 @@ var win =    0;
 var chance = 6;
 
 
-function list(){
+function listOfSingers(){
 array.map(function(y){
    x = document.createElement('li')
        x.append(y) 
@@ -64,10 +64,11 @@ function cGuess(){
     console.log(computerGuess);
     selectedWord.push(computerGuess);
     console.log(selectedWord)
-   
-}
 
- cGuess()
+   }
+
+   cGuess()
+
 
      function main(){
     document.onkeyup = function(){
@@ -104,7 +105,7 @@ function cGuess(){
        eselectedWord()
        ewordGuess()
        userclick = 0;
-       document.getElementById('guess').innerHTML  = '';
+       document.getElementById('guess').innerHTML  += userGuess ;
        cGuess()
        document.getElementById('cchoice').innerHTML = '_ '+ selectedWord.join('')[selectedWord.join('').length-2] +  selectedWord.join('')[selectedWord.join('').length-1];
       } 
