@@ -7,29 +7,29 @@ var userclick =  0;
 
 var win =    0;
 var chance = 6;
+var click = 0;
 
-function find(){
-   array.map(function(key){
-     var x = document.createElement('li')
-     x.append(key)
-     document.getElementById('list').append(x)
-   })
+
+
+
+var  listOfSingers = function(){
    
-}
-
-
-
-
-
-
-function listOfSingers(){
+   if(click > 1){
+      alert('please choose from the list')
+   } 
+   else{
 array.map(function(y){
    x = document.createElement('li')
        x.append(y) 
        document.getElementById('list').append(x)
+       click++
    })
-   
 }
+}
+
+
+
+
   
 
 
@@ -94,7 +94,7 @@ function cGuess(){
    document.getElementById('chance').innerHTML = chance;
    }
    if(userclick < 7 && userclick > 0){
-   document.getElementById('guess').innerHTML  += userGuess ;
+   document.getElementById('guess').innerHTML  = userGuess ;
    }
    for(let key of selectedWord.join(' ')){
       console.log(key)
@@ -118,7 +118,7 @@ function cGuess(){
        eselectedWord()
        ewordGuess()
        userclick = 0;
-       document.getElementById('guess').innerHTML  += userGuess ;
+       document.getElementById('guess').innerHTML  = userGuess ;
        cGuess()
        document.getElementById('cchoice').innerHTML = '_ '+ selectedWord.join('')[selectedWord.join('').length-2] +  selectedWord.join('')[selectedWord.join('').length-1];
       } 
