@@ -8,6 +8,19 @@ var userclick =  0;
 var win =    0;
 var chance = 6;
 
+function find(){
+   array.map(function(key){
+     var x = document.createElement('li')
+     x.append(key)
+     document.getElementById('list').append(x)
+   })
+   
+}
+
+
+
+
+
 
 function listOfSingers(){
 array.map(function(y){
