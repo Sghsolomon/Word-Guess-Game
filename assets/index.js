@@ -94,7 +94,7 @@ function cGuess(){
    document.getElementById('chance').innerHTML = chance;
    }
    if(userclick < 7 && userclick > 0){
-   document.getElementById('guess').innerHTML  = userGuess ;
+   document.getElementById('guess').innerHTML  = wordGuess.join('');
    }
    for(let key of selectedWord.join(' ')){
       console.log(key)
@@ -118,7 +118,7 @@ function cGuess(){
        eselectedWord()
        ewordGuess()
        userclick = 0;
-       document.getElementById('guess').innerHTML  = userGuess ;
+       document.getElementById('guess').innerHTML  = wordGuess.join('') ;
        cGuess()
        document.getElementById('cchoice').innerHTML = '_ '+ selectedWord.join('')[selectedWord.join('').length-2] +  selectedWord.join('')[selectedWord.join('').length-1];
       } 
