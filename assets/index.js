@@ -84,6 +84,7 @@ function cGuess(){
 
 
      function main(){
+        wordview = '';
     document.onkeyup = function(){
        var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
        wordGuess.push(userGuess);
@@ -94,7 +95,7 @@ function cGuess(){
    document.getElementById('chance').innerHTML = chance;
    }
    if(userclick < 7 && userclick > 0){
-   document.getElementById('guess').innerHTML  = wordGuess.join('');
+   //document.getElementById('guess').innerHTML  = wordGuess.join('');
    }
    for(let key of selectedWord.join(' ')){
       console.log(key)
@@ -108,26 +109,35 @@ function cGuess(){
        } 
        
     }
-    if(wordGuess.join('') == selectedWord){
-       win++;
-       chance = 6;
-       document.getElementById('win').innerHTML = win;
-       document.getElementById('chance').innerHTML = chance;
-       document.getElementById('wrapper').innerHTML = '';
-       video(wordGuess.join(''))
-       eselectedWord()
-       ewordGuess()
-       userclick = 0;
-       document.getElementById('guess').innerHTML  = wordGuess.join('') ;
-       cGuess()
-       document.getElementById('cchoice').innerHTML = '_ '+ selectedWord.join('')[selectedWord.join('').length-2] +  selectedWord.join('')[selectedWord.join('').length-1];
-      } 
+    for(let key of selectedWord.join('')){
+       console.log(key)
+       if(userGuess.indexOf(key) !== -1 &&  ){
+           wordview += key
+       } else {
+          wordview += '_'
+       }
+       document.getElementById('guess').innerHTML += wordview;
+    }
+   //  if(wordGuess.join('') == selectedWord){
+   //     win++;
+   //     chance = 6;
+   //     document.getElementById('win').innerHTML = win;
+   //     document.getElementById('chance').innerHTML = chance;
+   //     document.getElementById('wrapper').innerHTML = '';
+   //     video(wordGuess.join(''))
+   //     eselectedWord()
+   //     ewordGuess()
+   //     userclick = 0;
+   //   //  document.getElementById('guess').innerHTML  = wordGuess.join('') ;
+   //     cGuess()
+   //     document.getElementById('cchoice').innerHTML = '_ '+ selectedWord.join('')[selectedWord.join('').length-2] +  selectedWord.join('')[selectedWord.join('').length-1];
+   //    } 
       if(userclick > 6 &&  wordGuess.join('') !== selectedWord){
          alert('YOU LOSE, PLEASE TRY AGAIN')
          eselectedWord()
        ewordGuess()
        userclick = 0;
-       document.getElementById('guess').innerHTML  = '';
+       //document.getElementById('guess').innerHTML  = '';
        cGuess()
        document.getElementById('cchoice').innerHTML = '_ '+ selectedWord.join('')[selectedWord.join('').length-2] +  selectedWord.join('')[selectedWord.join('').length-1];
       }
